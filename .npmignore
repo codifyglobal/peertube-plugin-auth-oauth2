@@ -1,0 +1,7 @@
+LICENSE
+node_modules
+.cache
+dist
+__tests__
+.eslintrc.yml
+.release-it.*

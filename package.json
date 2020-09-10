@@ -1,0 +1,38 @@
+{
+  "name": "peertube-plugin-auth-oauth2",
+  "description": "A PeerTube server plugin that adds support for external authentication via an OAuth 2.0 provider.",
+  "version": "1.0.0",
+  "author": "Codify Global LLC",
+  "license": "AGPL-3.0",
+  "bugs": "https://github.com/codifyglobal/peertube-plugin-auth-oauth2/issues",
+  "directories": {
+    "test": "__tests__"
+  },
+  "engine": {
+    "peertube": ">=2.2.0"
+  },
+  "keywords": [
+    "peertube",
+    "plugin",
+    "auth",
+    "oauth2"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint main.js helpers/*.js __tests__/*.js"
+  },
+  "homepage": "https://github.com/codifyglobal/peertube-plugin-auth-oauth2",
+  "staticDirs": {},
+  "css": [],
+  "clientScripts": [],
+  "translations": {},
+  "library": "./main.js",
+  "dependencies": {
+    "client-oauth2": "^4.3.3",
+    "openid-client": "^3.15.10"
+  },
+  "devDependencies": {
+    "eslint": "^7.8.1",
+    "jest": "^26.4.2"
+  }
+}
