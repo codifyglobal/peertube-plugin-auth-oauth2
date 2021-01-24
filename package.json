@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-auth-oauth2-mastodon",
   "description": "A PeerTube server plugin that adds support for external authentication via a Mastodon OAuth 2.0 provider.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Alecks Gates",
   "license": "AGPL-3.0",
   "bugs": "https://github.com/agates/peertube-plugin-auth-oauth2-mastodon/issues",
