@@ -15,7 +15,7 @@ const store = {
   authDisplayName: 'OAuth2',
   identityPath: null,
   identityUsernameField: null,
-  sendIdentityTokenViaHeader: null,
+  sendIdentityTokenViaHeader: true,
   accessTokenParam: null,
 };
 
