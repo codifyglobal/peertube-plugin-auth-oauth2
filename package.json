@@ -1,10 +1,13 @@
 {
-  "name": "peertube-plugin-auth-oauth2",
-  "description": "A PeerTube server plugin that adds support for external authentication via an OAuth 2.0 provider.",
-  "version": "1.0.1",
-  "author": "Codify Global LLC",
+  "name": "peertube-plugin-auth-oauth2-mastodon",
+  "description": "A PeerTube server plugin that adds support for external authentication via a Mastodon OAuth 2.0 provider.",
+  "version": "2.0.0",
+  "contributors": [
+    { "name" : "Alecks Gates" },
+    { "name" : "Codify Global LLC" }
+  ],
   "license": "AGPL-3.0",
-  "bugs": "https://github.com/codifyglobal/peertube-plugin-auth-oauth2/issues",
+  "bugs": "https://github.com/agates/peertube-plugin-auth-oauth2-mastodon/issues",
   "directories": {
     "test": "__tests__"
   },
@@ -21,7 +24,7 @@
     "test": "jest",
     "lint": "eslint main.js helpers/*.js __tests__/*.js"
   },
-  "homepage": "https://github.com/codifyglobal/peertube-plugin-auth-oauth2",
+  "homepage": "https://github.com/agates/peertube-plugin-auth-oauth2-mastodon",
   "staticDirs": {},
   "css": [],
   "clientScripts": [],
