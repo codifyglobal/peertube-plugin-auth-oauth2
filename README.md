@@ -1,6 +1,6 @@
-# OAuth 2.0 server plugin for PeerTube
+# Mastodon OAuth 2.0 server plugin for PeerTube
 
-This PeerTube server plugin adds support to a PeerTube instance for external authentication via an OAuth 2.0 provider.
+This PeerTube server plugin adds support to a PeerTube instance for external authentication via a Mastodon OAuth 2.0 provider.
 
 ## Dependencies
 
@@ -22,7 +22,6 @@ To activate the plugin, configure the following settings after installation:
 | Token URL path | yes | The URL from the provider that gets the user's access tokens. *example: `/oauth2/token`* |
 | Identity URL path | yes | The URL from the provider that returns information about the authenticated user in a JSON format. *example: `/oauth2/userInfo`* |
 | Identity username field | yes | The name of the field that contains the user's username. |
-| Identity email field | yes |  The name of the field that contains the user's email. |
 | Send identity token sent via HTTP header?  | | Enable this setting to pass the access token using the `Authorization` header when requesting information about the authenticated user. *Required for AWS Cognito.* |
 | Identity access token URL parameter name  | | The URL parameter name used to pass the access token when requesting information about the authenticated user. *Required if the access token is sent via the URL.* |
 
