@@ -146,7 +146,7 @@ it('register function smoke test', async () => {
     getRouter,
   });
   // Assert
-  expect(registerSetting).toHaveBeenCalledTimes(12);
+  expect(registerSetting).toHaveBeenCalledTimes(expectedSettings.length);
   expectedSettings.forEach((setting, index) => {
     expect(setting).toStrictEqual(
       registerSetting.mock.calls[index][0]
