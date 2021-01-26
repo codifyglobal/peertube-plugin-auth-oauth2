@@ -223,7 +223,7 @@ async function loadSettingsAndCreateClient(
   store.identityUsernameField = identityUsernameField;
 
   const webserverUrl = config.getWebserverUrl();
-  store.redirectUrl = `${webserverUrl}/plugins/auth-oauth2/router/callback`;
+  store.redirectUrl = `${webserverUrl}/plugins/auth-oauth2-mastodon/router/callback`;
 
   store.client = new ClientOAuth2({
     clientId,
