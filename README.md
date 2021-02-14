@@ -11,7 +11,7 @@ This PeerTube server plugin adds support to a PeerTube instance for external aut
 
 To properly use this plugin, the OAuth 2.0 provider must support confidential clients. See [RFC6749: 2.1. Client Types](https://tools.ietf.org/html/rfc6749#section-2.1).
 
-> Note: [Nextcloud's](https://docs.nextcloud.com/server/20/admin_manual//configuration_server/oauth2.html) OAuth2 implementation does not support confidential clients.
+> Note: [Nextcloud's](https://docs.nextcloud.com/server/20/admin_manual//configuration_server/oauth2.html) OAuth2 implementation is not supported.
 
 ## Configuration
 
