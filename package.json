@@ -1,6 +1,6 @@
 {
   "name": "peertube-plugin-auth-oauth2",
-  "description": "A PeerTube server plugin that adds support for external authentication via an OAuth 2.0 provider.",
+  "description": "A PeerTube server plugin that adds support for external authentication via an OAuth 2.0 provider. The callback URL path is /plugins/auth-oauth2/router/callback",
   "version": "1.0.1",
   "author": "Codify Global LLC",
   "license": "AGPL-3.0",

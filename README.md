@@ -7,6 +7,20 @@ This PeerTube server plugin adds support to a PeerTube instance for external aut
   * **NodeJS >= 10.x**
   * **PeerTube >= 2.2.0**
 
+## OAuth 2.0 Provider Requirements
+
+To properly use this plugin, the OAuth 2.0 provider must support confidential clients. See [RFC6749: 2.1. Client Types](https://tools.ietf.org/html/rfc6749#section-2.1).
+
+> Note: [Nextcloud's](https://docs.nextcloud.com/server/20/admin_manual//configuration_server/oauth2.html) OAuth2 implementation does not support confidential clients.
+
+## Configuration
+
+The redirection endpoint provided by this plugin is available at `/plugins/auth-oauth2/router/callback`.  Use the following URI in your OAuth 2.0 provider's `callback URL` or `redirection URI` setting.
+
+`https://<your instance hostname>/plugins/auth-oauth2/router/callback`
+
+> Note: Replace `<your instance hostname>` with the hostname of your PeerTube instance.
+
 ## Plugin Settings
 
 To activate the plugin, configure the following settings after installation:
