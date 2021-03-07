@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-auth-oauth2-mastodon",
   "description": "A PeerTube server plugin that adds support for external authentication via a Mastodon OAuth 2.0 provider. The callback URL path is /plugins/auth-oauth2-mastodon/router/callback",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "author": "Alecks Gates",
   "license": "AGPL-3.0",
   "bugs": "https://github.com/agates/peertube-plugin-auth-oauth2-mastodon/issues",
