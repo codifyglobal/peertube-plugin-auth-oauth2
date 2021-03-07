@@ -36,7 +36,7 @@ To activate the plugin, configure the following settings after installation:
 | Token URL path | yes | The URL from the provider that gets the user's access tokens. *example: `/oauth2/token`* |
 | Identity URL path | yes | The URL from the provider that returns information about the authenticated user in a JSON format. *example: `/api/v1/accounts/verify_credentials`* |
 | Identity username field | yes | The name of the field that contains the user's username. |
-| Send identity token sent via HTTP header?  | | Enable this setting to pass the access token using the `Authorization` header when requesting information about the authenticated user. *Required for AWS Cognito.* |
+| Send identity token sent via HTTP header?  | | Enable this setting to pass the access token using the `Authorization` header when requesting information about the authenticated user. *Required for Mastodon.* |
 | Identity access token URL parameter name  | | The URL parameter name used to pass the access token when requesting information about the authenticated user. *Required if the access token is sent via the URL.* |
 
 > Note:  The plugin will not function if the required settings are missing or if the settings for the provider are incorrect.
