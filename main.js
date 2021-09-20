@@ -94,7 +94,7 @@ async function handleCallback(peertubeHelpers, settingsManager, req, res) {
         ).then(
           async (identityResponse) => {
             const identityData = await identityResponse.json();
-            const username = identityData[store.identityUsernameField];
+            const username = identityData[store.identityUsernameField].replace("-", "_");
             const email = identityData[store.identityEmailField];
             const role = 2; // Admin = 0, Moderator = 1, User = 2
             return store.userAuthenticated({
@@ -224,7 +224,7 @@ async function loadSettingsAndCreateClient(
   store.identityEmailField = identityEmailField;
   store.identityPath = identityPath;
   store.sendIdentityTokenViaHeader = sendIdentityTokenViaHeader;
-  store.identityUsernameField = identityUsernameField;
+  store.identityUsernameField = identityUsernameField.replace("-", "_");
 
   const webserverUrl = config.getWebserverUrl();
   store.redirectUrl = `${webserverUrl}/plugins/auth-oauth2/router/callback`;
