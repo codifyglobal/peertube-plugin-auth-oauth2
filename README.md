@@ -1,23 +1,17 @@
-# OAuth 2.0 server plugin for PeerTube
+# Mastodon OAuth 2.0 server plugin for PeerTube
 
-This PeerTube server plugin adds support to a PeerTube instance for external authentication via an OAuth 2.0 provider.
+This PeerTube server plugin adds support to a PeerTube instance for external authentication via a Mastodon OAuth 2.0 provider.
 
 ## Dependencies
 
   * **NodeJS >= 10.x**
   * **PeerTube >= 2.2.0**
 
-## OAuth 2.0 Provider Requirements
-
-To properly use this plugin, the OAuth 2.0 provider must support confidential clients. See [RFC6749: 2.1. Client Types](https://tools.ietf.org/html/rfc6749#section-2.1).
-
-> Note: [Nextcloud's](https://docs.nextcloud.com/server/20/admin_manual//configuration_server/oauth2.html) OAuth2 implementation is not supported.
-
 ## Configuration
 
-The redirection endpoint provided by this plugin is available at `/plugins/auth-oauth2/router/callback`.  Use the following URI in your OAuth 2.0 provider's `callback URL` or `redirection URI` setting.
+The redirection endpoint provided by this plugin is available at `/plugins/auth-oauth2-mastodon/router/callback`.  Use the following URI in Mastodon's `Redirect URI` setting.
 
-`https://<your instance hostname>/plugins/auth-oauth2/router/callback`
+`https://<your instance hostname>/plugins/auth-oauth2-mastodon/router/callback`
 
 > Note: Replace `<your instance hostname>` with the hostname of your PeerTube instance.
 
@@ -34,10 +28,9 @@ To activate the plugin, configure the following settings after installation:
 | Scope | yes | One or more Scope names separated by a single space. |
 | Authorize URL path | yes | The URL from the provider that signs the user in. *example: `/oauth2/authorize`* |
 | Token URL path | yes | The URL from the provider that gets the user's access tokens. *example: `/oauth2/token`* |
-| Identity URL path | yes | The URL from the provider that returns information about the authenticated user in a JSON format. *example: `/oauth2/userInfo`* |
+| Identity URL path | yes | The URL from the provider that returns information about the authenticated user in a JSON format. *example: `/api/v1/accounts/verify_credentials`* |
 | Identity username field | yes | The name of the field that contains the user's username. |
-| Identity email field | yes |  The name of the field that contains the user's email. |
-| Send identity token sent via HTTP header?  | | Enable this setting to pass the access token using the `Authorization` header when requesting information about the authenticated user. *Required for AWS Cognito.* |
+| Send identity token sent via HTTP header?  | | Enable this setting to pass the access token using the `Authorization` header when requesting information about the authenticated user. *Required for Mastodon.* |
 | Identity access token URL parameter name  | | The URL parameter name used to pass the access token when requesting information about the authenticated user. *Required if the access token is sent via the URL.* |
 
 > Note:  The plugin will not function if the required settings are missing or if the settings for the provider are incorrect.

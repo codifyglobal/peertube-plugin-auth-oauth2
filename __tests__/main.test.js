@@ -73,13 +73,6 @@ const expectedSettings = [
     default: 'username'
   },
   {
-    name: 'identityEmailField',
-    label: 'Identity email field (required)',
-    type: 'input',
-    private: true,
-    default: 'email'
-  },
-  {
     name: 'sendIdentityTokenViaHeader',
     label: 'Send identity token sent via HTTP header? (required for AWS Cognito)',
     type: 'input-checkbox',
@@ -153,7 +146,7 @@ it('register function smoke test', async () => {
     getRouter,
   });
   // Assert
-  expect(registerSetting).toHaveBeenCalledTimes(12);
+  expect(registerSetting).toHaveBeenCalledTimes(expectedSettings.length);
   expectedSettings.forEach((setting, index) => {
     expect(setting).toStrictEqual(
       registerSetting.mock.calls[index][0]

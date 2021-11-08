@@ -15,8 +15,7 @@ const store = {
   authDisplayName: 'OAuth2',
   identityPath: null,
   identityUsernameField: null,
-  identityEmailField: null,
-  sendIdentityTokenViaHeader: null,
+  sendIdentityTokenViaHeader: true,
   accessTokenParam: null,
 };
 
@@ -94,8 +93,8 @@ async function handleCallback(peertubeHelpers, settingsManager, req, res) {
         ).then(
           async (identityResponse) => {
             const identityData = await identityResponse.json();
-            const username = identityData[store.identityUsernameField];
-            const email = identityData[store.identityEmailField];
+            const username = identityData[store.identityUsernameField].toLowerCase();
+            const email = `${username}@${store.domain}`;
             const role = 2; // Admin = 0, Moderator = 1, User = 2
             return store.userAuthenticated({
               res,
@@ -147,7 +146,6 @@ async function loadSettingsAndCreateClient(
     'clientId',
     'clientSecret',
     'domain',
-    'identityEmailField',
     'identityPath',
     'sendIdentityTokenViaHeader',
     'identityUsernameField',
@@ -161,7 +159,6 @@ async function loadSettingsAndCreateClient(
     clientId,
     clientSecret,
     domain,
-    identityEmailField,
     identityPath,
     sendIdentityTokenViaHeader,
     identityUsernameField,
@@ -221,13 +218,12 @@ async function loadSettingsAndCreateClient(
   store.scope = scope.trim();
   store.domain = domain;
   store.accessTokenParam = accessTokenParam;
-  store.identityEmailField = identityEmailField;
   store.identityPath = identityPath;
   store.sendIdentityTokenViaHeader = sendIdentityTokenViaHeader;
   store.identityUsernameField = identityUsernameField;
 
   const webserverUrl = config.getWebserverUrl();
-  store.redirectUrl = `${webserverUrl}/plugins/auth-oauth2/router/callback`;
+  store.redirectUrl = `${webserverUrl}/plugins/auth-oauth2-mastodon/router/callback`;
 
   store.client = new ClientOAuth2({
     clientId,
@@ -326,13 +322,6 @@ async function register({
     type: 'input',
     private: true,
     default: 'username'
-  });
-  registerSetting({
-    name: 'identityEmailField',
-    label: 'Identity email field (required)',
-    type: 'input',
-    private: true,
-    default: 'email'
   });
   registerSetting({
     name: 'sendIdentityTokenViaHeader',
